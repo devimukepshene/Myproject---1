@@ -1,0 +1,48 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+.hero-section {
+    min-height: 90vh;
+    background-color: #f8f9fa;
+}
+
+
+.hero-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #212529;
+}
+
+
+.hero-circle span {
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+section {
+    scroll-margin-top: 70px;
+}
