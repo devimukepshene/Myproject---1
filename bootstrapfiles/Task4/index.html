@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dynamic Bootstrap Carousel</title>
+
+   
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="bg-light">
+
+    <div class="container py-5">
+
+        <h1 class="text-center mb-4">
+            Explore Beautiful Places
+        </h1>
+
+        <div id="dynamicCarousel" class="carousel slide">
+
+        
+            <div class="carousel-inner" id="carouselContent">
+            </div>
+
+           
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#dynamicCarousel"
+                data-bs-slide="prev"
+                aria-label="Previous slide"
+            >
+                <span
+                    class="carousel-control-prev-icon bg-dark rounded-circle"
+                    aria-hidden="true"
+                ></span>
+            </button>
+
+          
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#dynamicCarousel"
+                data-bs-slide="next"
+                aria-label="Next slide"
+            >
+                <span
+                    class="carousel-control-next-icon bg-dark rounded-circle"
+                    aria-hidden="true"
+                ></span>
+            </button>
+
+        </div>
+
+    </div>
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        
+        const slides = [
+            {
+                image: "https://picsum.photos/id/1018/1200/500",
+                title: "Mountain Adventure",
+                description: "Discover the beauty of the mountains."
+            },
+
+            {
+                image: "https://picsum.photos/id/1015/1200/500",
+                title: "River Escape",
+                description: "Enjoy peaceful views beside the river."
+            },
+
+            {
+                image: "https://picsum.photos/id/1016/1200/500",
+                title: "Forest Journey",
+                description: "Explore nature and green forests."
+            }
+        ];
+
+
+        const carouselContent =
+            document.getElementById("carouselContent");
+
+
+        slides.forEach((slide, index) => {
+
+            const carouselItem = document.createElement("div");
+
+            carouselItem.className =
+                index === 0
+                    ? "carousel-item active"
+                    : "carousel-item";
+
+
+            const image = document.createElement("img");
+
+            image.src = slide.image;
+            image.alt = slide.title;
+            image.className = "d-block w-100";
+
+
+            
+            const caption = document.createElement("div");
+
+            caption.className = "carousel-caption";
+
+
+          
+            const title = document.createElement("h5");
+
+            title.textContent = slide.title;
+
+
+            const description = document.createElement("p");
+
+            description.textContent = slide.description;
+
+
+         
+            caption.appendChild(title);
+            caption.appendChild(description);
+
+
+            carouselItem.appendChild(image);
+            carouselItem.appendChild(caption);
+
+
+            
+            carouselContent.appendChild(carouselItem);
+
+        });
+
+    </script>
+
+</body>
+</html>
